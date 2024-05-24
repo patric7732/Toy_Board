@@ -22,7 +22,7 @@ public class Board {
     private String title;
     private String password;
     private String content;
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
 }

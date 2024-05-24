@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org/">
     <title>Board List</title>
+    <link rel="stylesheet" th:href="@{/css/list.css}">
 </head>
 <body>
-<h1>Board List</h1>
+<div class="board-container">
+<h1>게시판</h1>
 <table th:if="${!boards.empty}">
     <thead>
     <tr>
@@ -22,16 +24,18 @@
         <td>
             <a th:href="@{/view/{id} (id=${board.id})}" th:text="${board.title}"></a>
         </td>
+        <td th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd')}">Created At</td>
     </tr>
     </tbody>
 </table>
 <div th:if="${boards.totalPages > 1}">
-    <ul>
+    <ul class="pagination">
         <li th:each="i : ${#numbers.sequence(1, boards.totalPages)}">
             <a th:href="@{/list(page=${i})}" th:text="${i}" th:classappend="${i == currentPage ? 'active' : ''}"></a>
         </li>
     </ul>
 </div>
-<a th:href="@{/writeform}"> Add Board </a>
+<a class="add-board" th:href="@{/writeform}"> 글작성 </a>
+</div>
 </body>
 </html>

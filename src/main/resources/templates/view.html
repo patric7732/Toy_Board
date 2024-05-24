@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글</title>
+    <link rel="stylesheet" th:href="@{/css/view.css}">
 </head>
 <body>
 <div class="board-details">
@@ -13,13 +14,20 @@
     <div class="details">
         <strong>Content:</strong> <span th:text="${board.content}">Content</span>
     </div>
+    <div class="details">
+        <strong>작성일:</strong>
+        <span th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd HH:mm')}"></span>
+    </div>
+    <div class="details">
+        <strong>수정일:</strong>
+        <span th:text="${#temporals.format(board.updatedAt, 'yyyy/MM/dd HH:mm')}"></span>
+    </div>
 
-    <!-- Update the List link to include the current page, if applicable -->
-    <a th:href="@{/list}" class="link">목록</a>
-    <a th:href="@{/updateform/{id}(id=${board.id})}" class="link">수정</a>
-    <a th:href="@{/deleteform/{id}(id=${board.id})}" class="link"
-    >삭제</a>
+    <div class="actions">
+        <a th:href="@{/list}" class="link">목록</a>
+        <a th:href="@{/updateform/{id}(id=${board.id})}" class="link">수정</a>
+        <a th:href="@{/deleteform/{id}(id=${board.id})}" class="link">삭제</a>
+    </div>
 </div>
-
 </body>
 </html>

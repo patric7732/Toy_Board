@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>게시글 수정</title>
+    <link rel="stylesheet" th:href="@{/css/updateform.css}">
 </head>
 <body>
-<h1>게시글 수정</h1>
-<form th:action="@{/updateform}" method="post" th:object="${board}">
-    <input type="hidden" th:field="*{id}" name="id">
+<div class="form-container">
+    <h1>게시글 수정</h1>
+    <form th:action="@{/updateform}" method="post" th:object="${board}" class="form">
+        <input type="hidden" th:field="*{id}" name="id">
 
-    <label for="name">Name :</label>
-    <input type="text" id="name" th:field="*{name}" name="name" required/>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" name="name" required/>
+        </div>
 
-    <label for="title">Title :</label>
-    <input type="text" id="title" th:field="*{title}" name="title" required/>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" th:field="*{title}" name="title" required/>
+        </div>
 
-    <label for="content">Content :</label>
-    <input type="text" id="content" th:field="*{content}" name="content" required/>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <input type="text" id="content" th:field="*{content}" name="content" required/>
+        </div>
 
-    <label for="password">Password :</label>
-    <input type="password" id="password" name="password" required/>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required/>
+        </div>
 
-    <input type="submit" value="게시글 수정">
-</form>
+        <div class="form-group">
+            <input type="submit" value="게시글 수정">
+        </div>
+    </form>
 
-<div th:if="${error}">
-    <p th:text="${error}" style="color:red;"></p>
+    <div th:if="${error}" class="error-message">
+        <p th:text="${error}"></p>
+    </div>
 </div>
 </body>
 </html>
