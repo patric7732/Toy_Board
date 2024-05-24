@@ -61,7 +61,7 @@ public class BoardController {
     @PostMapping("/updateform")
     public String updateBoard(@RequestParam Long id, @RequestParam String password, @ModelAttribute Board board, RedirectAttributes redirectAttributes) {
         if (boardService.checkPassword(id, password)) {
-            boardService.saveBoard(board);
+            boardService.updateBoardByid(board);
             redirectAttributes.addFlashAttribute("message", "Board updated successfully");
             return "redirect:/list";
         } else {

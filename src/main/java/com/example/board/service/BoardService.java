@@ -2,6 +2,7 @@ package com.example.board.service;
 
 import com.example.board.domain.Board;
 import com.example.board.repository.BoardRepository;
+import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,11 +30,28 @@ public class BoardService {
         return boardRepository.findById(id).orElse(null);
     }
 
-    // 등록 및 수정
+    // 등록
     @Transactional
     public Board saveBoard(Board board){
+        board.setCreatedAt(LocalDateTime.now());
+        if (board.getViews() == null){
+            board.setViews(0);
+        }
         return boardRepository.save(board);
     }
+
+    // 수정
+    @Transactional
+    public Board updateBoardByid(Board updatedBoard) {
+        Board existingBoard = boardRepository.findById(updatedBoard.getId()).orElse(null);
+        if (existingBoard != null) {
+            updatedBoard.setViews(existingBoard.getViews());
+        }
+        updatedBoard.setUpdatedAt(LocalDateTime.now());
+        updatedBoard.setCreatedAt(existingBoard.getCreatedAt());
+        return boardRepository.save(updatedBoard);
+    }
+
 
 
     // 삭제
