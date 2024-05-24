@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f9;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,50 +10,59 @@ body {
 }
 
 .board-details {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.board-details h2 {
+h2 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
     color: #333;
-    margin-bottom: 20px;
     text-align: center;
 }
 
 .details {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+    color: #666;
+    display: flex;
+    flex-direction: column;
 }
 
 .details strong {
-    display: inline-block;
-    width: 80px;
-    color: #555;
+    color: #333;
+    margin-right: 0.5rem;
 }
 
-.details span {
-    color: #333;
+.content-box {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    white-space: pre-wrap; /* Ensure newlines and spaces are preserved */
 }
 
 .actions {
-    text-align: center;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.actions .link {
-    color: #009879;
+.link {
     text-decoration: none;
-    margin: 0 10px;
-    padding: 10px 20px;
+    color: #009879;
+    padding: 0.5rem 1rem;
     border: 1px solid #009879;
-    border-radius: 3px;
-    display: inline-block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.actions .link:hover {
+.link:hover {
     background-color: #009879;
-    color: white;
+    color: #fff;
 }

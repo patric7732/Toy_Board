@@ -12,7 +12,10 @@
         <strong>Name:</strong> <span th:text="${board.name}">Name</span>
     </div>
     <div class="details">
-        <strong>Content:</strong> <span th:text="${board.content}">Content</span>
+        <strong>Content:</strong>
+        <div class="content-box">
+            <p th:text="${board.content}">Content</p>
+        </div>
     </div>
     <div class="details">
         <strong>작성일:</strong>

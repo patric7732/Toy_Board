@@ -62,10 +62,10 @@ public class BoardController {
     public String updateBoard(@RequestParam Long id, @RequestParam String password, @ModelAttribute Board board, RedirectAttributes redirectAttributes) {
         if (boardService.checkPassword(id, password)) {
             boardService.updateBoardByid(board);
-            redirectAttributes.addFlashAttribute("message", "Board updated successfully");
+            redirectAttributes.addFlashAttribute("message", "업데이트가 성공되었습니다.");
             return "redirect:/list";
         } else {
-            redirectAttributes.addFlashAttribute("error", "Invalid password. Board update failed.");
+            redirectAttributes.addFlashAttribute("error", "비밀번호가 일치하지 않습니다.");
             return "redirect:/updateform/" + id;
         }
     }
