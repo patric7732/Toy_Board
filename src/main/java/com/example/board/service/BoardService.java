@@ -42,12 +42,23 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
+    //비밀번호 확인
     public boolean checkPassword(Long id, String password) {
         Board board = boardRepository.findById(id).orElse(null);
         if (board != null) {
             return board.getPassword().equals(password);
         }
         return false;
+    }
+
+    // 조회수
+    public Board countBoard(Long id){
+        Board board = boardRepository.findById(id).orElse(null);
+        if (board != null){
+            board.setViews(board.getViews() + 1);
+            boardRepository.save(board);
+        }
+        return board;
     }
 
 

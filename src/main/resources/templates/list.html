@@ -14,6 +14,7 @@
         <th>ID</th>
         <th>Name</th>
         <th>Title</th>
+        <th>Views</th>
         <th>Created At</th>
     </tr>
     </thead>
@@ -24,6 +25,7 @@
         <td>
             <a th:href="@{/view/{id} (id=${board.id})}" th:text="${board.title}"></a>
         </td>
+        <td th:text="${board.views}"></td>
         <td th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd')}">Created At</td>
     </tr>
     </tbody>

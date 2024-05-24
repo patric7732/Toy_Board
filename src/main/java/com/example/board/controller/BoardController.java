@@ -33,6 +33,7 @@ public class BoardController {
     @GetMapping("/view/{id}")
     public String showView(Model model, @PathVariable Long id) {
         Board board = boardService.findBoardByid(id);
+        boardService.countBoard(id);
         model.addAttribute("board", board);
         return "view";
     }
