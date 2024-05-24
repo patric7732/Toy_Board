@@ -43,7 +43,8 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 0.5rem;
-    white-space: pre-wrap; /* Ensure newlines and spaces are preserved */
+    white-space: pre-wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .actions {
@@ -55,14 +56,15 @@ h2 {
 
 .link {
     text-decoration: none;
-    color: #009879;
+    background-color: #009879;
+    color: #ffffff;
     padding: 0.5rem 1rem;
     border: 1px solid #009879;
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .link:hover {
-    background-color: #009879;
-    color: #fff;
+    background-color: #007f68;
 }

@@ -7,39 +7,43 @@
 </head>
 <body>
 <div class="board-container">
-<h1>게시판</h1>
-<table th:if="${!boards.empty}">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Title</th>
-        <th>Views</th>
-        <th>Created At</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="board : ${boards}">
-        <td th:text="${board.id}"></td>
-        <td th:text="${board.name}"></td>
-        <td>
-            <a th:href="@{/view/{id} (id=${board.id})}" th:text="${board.title}"></a>
-        </td>
-        <td th:text="${board.views}"></td>
-        <td th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd')}">Created At</td>
-    </tr>
-    </tbody>
-</table>
-<div th:if="${boards.totalPages > 1}">
-    <ul class="pagination">
-        <li th:each="i : ${#numbers.sequence(1, boards.totalPages)}">
-            <a th:href="@{/list(page=${i})}" th:text="${i}" th:classappend="${i == currentPage ? 'active' : ''}"></a>
-        </li>
-    </ul>
+    <div class="board-header">
+        <h1>게시판</h1>
+    </div>
+    <div class="board-table">
+        <table th:if="${!boards.empty}">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Views</th>
+                <th>Created At</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${boards}">
+                <td th:text="${board.id}"></td>
+                <td th:text="${board.name}"></td>
+                <td>
+                    <a th:href="@{/view/{id} (id=${board.id})}" th:text="${board.title}"></a>
+                </td>
+                <td th:text="${board.views}"></td>
+                <td th:text="${#temporals.format(board.createdAt, 'yyyy/MM/dd')}">Created At</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination-container" th:if="${boards.totalPages > 1}">
+        <ul class="pagination">
+            <li th:each="i : ${#numbers.sequence(1, boards.totalPages)}">
+                <a th:href="@{/list(page=${i})}" th:text="${i}" th:classappend="${i == currentPage ? 'active' : ''}"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="add-board-container">
+        <a class="add-board" th:href="@{/writeform}"> 글작성 </a>
+    </div>
 </div>
-<a class="add-board" th:href="@{/writeform}"> 글작성 </a>
-</div>
-
-
 </body>
 </html>
