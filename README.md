@@ -74,6 +74,7 @@ INSERT INTO board (name, title, password, content) VALUES
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/2d1449e4-87be-4697-9693-f4f1beb50b5a" alt="listdiagram">
 </div>
+
 ```markdown
 - **URL:** `/list`, `/list?page=2`
 - **기능:**
@@ -83,6 +84,7 @@ INSERT INTO board (name, title, password, content) VALUES
   - 하단에는 페이지 네비게이터가 있어 다른 페이지로 쉽게 이동할 수 있습니다.
   - 각 게시글은 ID, 제목, 이름, 등록일(YYYY/MM/DD 형식)로 목록이 구성됩니다.
 ```
+
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/ec7904ca-f9c8-4019-a8f9-3ce8e34f903c" alt="list">
 </div>
@@ -92,6 +94,7 @@ INSERT INTO board (name, title, password, content) VALUES
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/f34a1019-c811-437e-9623-a2ac9cb270b4" alt="viewdiagram">
 </div>
+
 ```markdown
 - **URL:** `/view?id=아이디`
 - **기능:**
@@ -100,6 +103,7 @@ INSERT INTO board (name, title, password, content) VALUES
   - 게시글의 등록일은 YYYY/MM/DD hh24:mi 형식으로 표시됩니다.
   - 게시글의 암호는 보여지지 않습니다.
 ```
+
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/4b02157d-5f07-4bc3-8144-6556a94312ab" alt="view">
 </div>
@@ -109,14 +113,15 @@ INSERT INTO board (name, title, password, content) VALUES
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/4ba2ef57-924d-449a-b383-a2c2d34092a5" alt="updatediagram">
 </div>
+
 ```markdown
 - **URL:** `/writeform`
 - **기능:**
   - 특정 게시글을 쓰기위한 폼을 제공합니다.
   - 사용자는 이름, 제목, 내용, 암호를 입력하고, 확인 버튼을 클릭하여 등록을 요청합니다.
   - 모든 내용이 잘 입력되어 있을 경우 `/write`로 요청을 보내 등록 처리 후 `/list`로 리다이렉트됩니다.
-
 ```
+
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/d2f71473-f057-4f34-8ba9-683d9dbe9085" alt="writeform">
 </div>
@@ -126,6 +131,7 @@ INSERT INTO board (name, title, password, content) VALUES
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/57b7e57a-ef39-49b0-9ef2-2523fcd6d91e" alt="deletediagram">
 </div>
+
 ```markdown
 - **URL:** `/deleteform?id=아이디`
 - **기능:**
@@ -133,6 +139,7 @@ INSERT INTO board (name, title, password, content) VALUES
   - 사용자는 암호를 입력하고, 확인 버튼을 클릭하여 삭제를 요청합니다.
   - 올바른 암호 입력 시, `/delete`로 요청을 보내 삭제 처리 후 `/list`로 리다이렉트됩니다.
 ```
+
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/90ef6ff0-c59f-476e-84eb-fa0aef645f7c" alt="deleteform">
 </div>
@@ -143,14 +150,15 @@ INSERT INTO board (name, title, password, content) VALUES
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/4ba2ef57-924d-449a-b383-a2c2d34092a5" alt="updatediagram">
 </div>
+
 ```markdown
 - **URL:** `/updateform?id=아이디`
 - **기능:**
   - 특정 게시글을 수정하기 위한 폼을 제공합니다.
   - 이름, 제목, 본문, 암호 필드를 포함하며, 사용자는 이를 수정할 수 있습니다.
   - 확인 버튼을 클릭하면 `/update`로 수정 요청을 보내고, 수정이 완료되면 해당 게시글의 상세 페이지(`/view?id=아이디`)로 리다이렉트됩니다.
-
 ```
+
 <div align="center">
   <img src="https://github.com/patric7732/Toy_Board/assets/82136723/49cbf9e6-b26a-42af-b864-fc51c4053626" alt="updateform">
 </div>
